@@ -40,18 +40,21 @@ src/
 ├── transforms.py      # Transformations: rotation, normalization
 ├── canvas.py          # Rendering engine
 ├── scenes.py          # Pre-built 3D scenes
+├── utils.py           # OBJ files utilities
 └── main.py            # Demo and entry point
 ```
 
 ### Module Responsibilities
 
 #### `geometry.py` - Data Representation
+**Philosophy**: These are lightweight containers—they hold data, nothing more.
+
 - **`Point3D`**: A simple dataclass representing a 3D point with x, y, z coordinates
 - **`Scene`**: A dataclass containing a list of Point3D objects and line indices that connect them
 
-**Philosophy**: These are lightweight containers—they hold data, nothing more.
-
 #### `transforms.py` - Transformations
+**Philosophy**: Pure transformation functions that take data in, apply math, and return transformed data.
+
 - **`rotate_around_y(points, angle)`**: Rotates points around the Y axis at the world origin
 - **`rotate_object_around_its_y_axis(points, angle)`**: Rotates points around the object's center
 - **`normalize_scene(scene, distance)`**: Transforms a scene to work optimally with perspective projection:
@@ -59,31 +62,31 @@ src/
   - Scales so the max dimension is 1
   - Positions the object at a specified distance behind the screen
 
-**Philosophy**: Pure transformation functions that take data in, apply math, and return transformed data.
-
 #### `canvas.py` - Rendering
+**Philosophy**: Canvas is responsible for projection and visualization only. It doesn't know about specific rotations—those are provided as functions.
+
 - **`Canvas`**: The main rendering engine
   - `load_scene(scene)`: Load a 3D scene
   - `_project(point)`: Apply perspective projection to a point
   - `render()`: Display a static 3D scene
   - `render_animated(rotation_func, iterations)`: Animate by repeatedly applying a transformation and redrawing
 
-**Philosophy**: Canvas is responsible for projection and visualization only. It doesn't know about specific rotations—those are provided as functions.
-
 #### `scenes.py` - Scene Building
+**Philosophy**: Easy to add new (simple) scenes without touching the rendering engine.
+
 Pre-built 3D scenes for experimentation:
 - `create_cube()`: A simple cube
 - `create_pyramid()`: A simple pyramid
 
-**Philosophy**: Easy to add new scenes without touching the rendering engine.
 
 #### `utils.py` - OBJ File Loading
+**Philosophy**: Handle Waveform OGJ files.
+
 Utilities for loading Wavefront OBJ files:
 - **`load_obj_as_scene(path)`**: Main function to load an OBJ file directly as a Scene
 - **`load_obj_points_faces(path)`**: Load OBJ vertices and faces separately
 - **`faces_to_edges(faces)`**: Convert face definitions to edge definitions
 
-**Philosophy**: Handle file I/O separately so the rendering engine stays focused on graphics.
 
 #### `main.py` - Entry Point
 Demonstrates how to use the engine:
