@@ -2,6 +2,22 @@
 
 A minimal, educational 3D rendering engine built with Python and Matplotlib. This project demonstrates the core concepts of perspective projection to help understand how 3D objects are rendered on a 2D canvas.
 
+## Rendered Examples
+
+Here are some examples of the engine in action:
+
+### Cube
+![Rotating cube](images/cube.png)
+
+### Pyramid
+![Rotating pyramid](images/pyramid.png)
+
+### Utah Teapot
+![Rotating Utah teapot](images/teapot.png)
+
+### Trumpet
+![Rotating Utah teapot](images/trumpet.png)
+
 ## The Idea
 
 The goal of this project is **educational**: to understand and explore how 3D objects are projected onto 2D screens using perspective projection. Rather than focusing on performance or fancy features, the code prioritizes clarity and readability, making it easy to experiment with and understand the fundamental mathematics involved.
@@ -116,22 +132,6 @@ poetry run python src/main.py
 ```
 
 The cube will rotate around its own center for 360 iterations (one degree per frame), displayed on a black canvas with lime green lines.
-
-## Rendered Examples
-
-Here are some examples of the engine in action:
-
-### Cube
-![Rotating cube](images/cube.png)
-
-### Pyramid
-![Rotating pyramid](images/pyramid.png)
-
-### Utah Teapot
-![Rotating Utah teapot](images/teapot.png)
-
-### Trumpet
-![Rotating Utah teapot](images/trumpet.png)
 
 ## Loading OBJ Files
 
