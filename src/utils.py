@@ -35,7 +35,7 @@ def load_obj_points_faces(path: str) -> Tuple[List[Point3D], List[List[int]]]:
                 # Extract vertex indices, handling texture/normal coords (e.g., v/vt/vn)
                 indices = [int(part.split("/")[0]) - 1 for part in line.split()[1:]]
                 faces.append(indices)
-
+    print(f"Loaded {len(points)} vertices and {len(faces)} faces from {path}")
     return points, faces
 
 
@@ -63,6 +63,7 @@ def faces_to_edges(faces: List[List[int]]) -> List[Tuple[int, int]]:
             b = face[(i + 1) % n]  # wrap-around for last edge
             if a != b:  # skip collapsed edges
                 edges.add(tuple(sorted((a, b))))
+    print(f"Extracted {len(edges)} unique edges from {len(faces)} faces")
     return list(edges)
 
 

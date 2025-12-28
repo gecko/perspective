@@ -23,17 +23,25 @@ def main():
     # scene = load_obj_as_scene("OBJs/icosahedron.obj")
     # scene = load_obj_as_scene("OBJs/trumpet.obj")
     # scene = load_obj_as_scene("OBJs/shuttle.obj")
-    scene = load_obj_as_scene("OBJs/teapot.obj")
+    # scene = load_obj_as_scene("OBJs/teapot.obj")
+    # scene = load_obj_as_scene("OBJs/sphere.obj")
+    # scene = load_obj_as_scene("OBJs/fox.obj")
+    # scene = load_obj_as_scene("OBJs/spaceship.obj")
+    # scene = load_obj_as_scene("OBJs/cow.obj")
+    # scene = load_obj_as_scene("OBJs/patrick.obj")
+    scene = load_obj_as_scene("OBJs/deer.obj")
 
-    scene = normalize_scene(scene, distance=10.0, scale=8.0)
+    scene = normalize_scene(scene, distance=10.0, scale=6.0)
+
+    scene.points = rotate_object_around_its_y_axis(scene.points, angle_degrees=130)
     canvas.load_scene(scene)
 
     # Define a rotation function that rotates the object around its own center
     def rotate_frame(points: List[Point3D]) -> List[Point3D]:
-        return rotate_object_around_its_y_axis(points, 1.0)
+        return rotate_object_around_its_y_axis(points, 2.0)
 
     # Render animated scene
-    canvas.render_animated(rotate_frame, iterations=100)
+    canvas.render_animated(rotate_frame, iterations=360)
 
 
 if __name__ == "__main__":
