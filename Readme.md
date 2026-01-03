@@ -39,7 +39,8 @@ To understand where the formulas come from, let's have a look at a simplified $2
    - Now, in order to simplify let's make the two assumptions:
       1. **Observer at origin**: The observer's eye is positioned at the world origin $(0, 0, 0)$.
       2. **Screen distance**: The projection screen is at a distance of 1 unit from the observer.
-   - From here it is clear that $\frac{x'}{x} = \frac{y'}{y}$ holds, which leads under the assumption of $x' = 1$ to the projection formula $y' = \frac{y}{x}$. With this calculation in mind the above projection formulas for $x_{proj} and y_{proj}$ become clear.
+   - From here it is clear that $\frac{x'}{x} = \frac{y'}{y}$ holds, which leads under the assumption of $x' = 1$ to the projection formula $y' = \frac{y}{x}$
+   - With this calculation in mind the above projection formulas for $x_{proj}$ and $y_{proj}$ become clear.
 
 ## Architecture
 
