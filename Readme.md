@@ -26,11 +26,11 @@ The goal of this project is **educational**: to understand and explore how 3D ob
 
 The engine uses the simplest form of perspective projection:
 
-$$x' = \frac{x}{z}, \quad y' = \frac{y}{z}$$
+$$x_{proj} = \frac{x}{z}, \quad y_{proj} = \frac{y}{z}$$
 
 Where:
 - $(x, y, z)$ are the 3D coordinates
-- $(x', y')$ are the 2D projected coordinates
+- $(x_{proj}, y_{proj})$ are the 2D projected coordinates
 
 ### Assumptions Behind This Formula
 
@@ -42,7 +42,7 @@ This formula works under specific geometric assumptions:
    - ![](images/scetch.png)
    - One formed by: eye → 3D point → its projection
    - Another formed by: eye → screen → projected position
-   - from here it is clear that $\frac{x'}{x} = \frac{y'}{y}$ holds, which leads under the assumption of $x' = 1$ to the above projection formulas $x' = \frac{x}{z}, \quad y' = \frac{y}{z}$.
+   - From here it is clear that $\frac{x'}{x} = \frac{y'}{y}$ holds, which leads under the assumption of $x' = 1$ to the above projection formulas $y' = \frac{y}{x}$. With this calculation in mind the above projection formulas for $x_{proj} and y_{proj}$ become clear.
 
 ## Architecture
 
