@@ -42,7 +42,7 @@ This formula works under specific geometric assumptions:
    - ![](images/scetch.png)
    - One formed by: eye → 3D point → its projection
    - Another formed by: eye → screen → projected position
-   - from here it is clear that $\frac{x'}{x} = \frac{y'}{y}$ holds, which leads under the assumptions to the above projection formulas.
+   - from here it is clear that $\frac{x'}{x} = \frac{y'}{y}$ holds, which leads under the assumption of $x' = 1$ to the above projection formulas $x' = \frac{x}{z}, \quad y' = \frac{y}{z}$.
 
 ## Architecture
 
