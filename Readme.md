@@ -38,10 +38,12 @@ This formula works under specific geometric assumptions:
 
 1. **Observer at origin**: The observer's eye is positioned at the world origin $(0, 0, 0)$
 2. **Screen distance**: The projection screen is at a distance of 1 unit from the observer
-3. **Similar triangles**: The projection is derived from the similarity of two triangles:
+
+   
+- To understand where the forulas come from, have a look at theese two **similar triangles**:
+   - One formed by: `eye` → `3D point` → `points projection to the bottom`
+   - The other formed by: `eye` → `screen` → `projected bottom-position`
    - ![](images/scetch.png)
-   - One formed by: eye → 3D point → its projection
-   - Another formed by: eye → screen → projected position
    - From here it is clear that $\frac{x'}{x} = \frac{y'}{y}$ holds, which leads under the assumption of $x' = 1$ to the above projection formulas $y' = \frac{y}{x}$. With this calculation in mind the above projection formulas for $x_{proj} and y_{proj}$ become clear.
 
 ## Architecture
