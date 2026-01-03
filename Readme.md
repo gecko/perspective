@@ -28,22 +28,17 @@ The engine uses the simplest form of perspective projection:
 
 $$x_{proj} = \frac{x}{z}, \quad y_{proj} = \frac{y}{z}$$
 
-Where:
+where:
 - $(x, y, z)$ are the 3D coordinates
 - $(x_{proj}, y_{proj})$ are the 2D projected coordinates
 
-### Assumptions Behind This Formula
-
-This formula works under specific geometric assumptions:
-
-1. **Observer at origin**: The observer's eye is positioned at the world origin $(0, 0, 0)$
-2. **Screen distance**: The projection screen is at a distance of 1 unit from the observer
-
-   
-- To understand where the forulas come from, have a look at theese two **similar triangles**:
-   - One formed by: `eye` → `3D point` → `points projection to the bottom`
-   - The other formed by: `eye` → `screen` → `projected bottom-position`
+To understand where the formulas come from, let's have a look at a simplified $2d \rightarrow 1d$ projection example. Consider the two **similar triangles**:
+   - one formed by: `eye` → `3D point` → `points projection to the bottom`
+   - the other formed by: `eye` → `screen` → `projected bottom-position`
    - ![](images/scetch.png)
+   - Now, in order to simplify let's make the two assumptions:
+      1. **Observer at origin**: The observer's eye is positioned at the world origin $(0, 0, 0)$.
+      2. **Screen distance**: The projection screen is at a distance of 1 unit from the observer.
    - From here it is clear that $\frac{x'}{x} = \frac{y'}{y}$ holds, which leads under the assumption of $x' = 1$ to the above projection formulas $y' = \frac{y}{x}$. With this calculation in mind the above projection formulas for $x_{proj} and y_{proj}$ become clear.
 
 ## Architecture
