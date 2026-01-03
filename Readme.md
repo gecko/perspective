@@ -18,7 +18,7 @@ Here are some examples of the engine in action:
 ### Trumpet
 ![Rotating Utah teapot](images/trumpet.png)
 
-## The Idea
+## Project Idea
 
 The goal of this project is **educational**: to understand and explore how 3D objects are projected onto 2D screens using perspective projection. Rather than focusing on performance or fancy features, the code prioritizes clarity and readability, making it easy to experiment with and understand the fundamental mathematics involved.
 
@@ -34,7 +34,7 @@ where:
 
 To understand where the formulas come from, let's have a look at a simplified $2d \rightarrow 1d$ projection example. Consider the two **similar triangles**:
    - one formed by: `eye` → `3D point` → `points projection to the bottom`
-   - the other formed by: `eye` → `screen` → `projected bottom-position`
+   - the other formed by: `eye` → `point projection on screen` → `projected points bottom-position`
    - ![](images/scetch.png)
    - Now, in order to simplify let's make the two assumptions:
       1. **Observer at origin**: The observer's eye is positioned at the world origin $(0, 0, 0)$.
